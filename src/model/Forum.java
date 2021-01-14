@@ -8,7 +8,27 @@ public class Forum {
 	private String forumDescription;
 	private Date forumDate;
 	private int custID;
-	private int staffID;
+	private String staffID;
+
+	
+	
+	public Forum() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public Forum(int forumID, String forumTitle, String forumDescription, Date forumDate, int custID, String staffID) {
+		super();
+		this.forumID = forumID;
+		this.forumTitle = forumTitle;
+		this.forumDescription = forumDescription;
+		this.forumDate = forumDate;
+		this.custID = custID;
+		this.staffID = staffID;
+	}
+
+
 	public int getForumID() {
 		return forumID;
 	}
@@ -21,12 +41,7 @@ public class Forum {
 	public void setForumTitle(String forumTitle) {
 		this.forumTitle = forumTitle;
 	}
-	public String getForumDescription() {
-		return forumDescription;
-	}
-	public void setForumDescription(String forumDescription) {
-		this.forumDescription = forumDescription;
-	}
+	
 	public Date getForumDate() {
 		return forumDate;
 	}
@@ -39,10 +54,24 @@ public class Forum {
 	public void setCustID(int custID) {
 		this.custID = custID;
 	}
-	public int getStaffID() {
+
+
+	public String getForumDescription() {
+		return forumDescription;
+	}
+
+
+	public void setForumDescription(String forumDescription) {
+		this.forumDescription = forumDescription;
+	}
+
+
+	public String getStaffID() {
 		return staffID;
 	}
-	public void setStaffID(int staffID) {
+
+
+	public void setStaffID(String staffID) {
 		this.staffID = staffID;
 	}
 	
