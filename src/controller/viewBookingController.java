@@ -35,7 +35,7 @@ public class viewBookingController extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			RequestDispatcher dispatcher = request.getRequestDispatcher("viewBooking.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("customer-booking.jsp");
 			dispatcher.forward(request, response);
 	    }
 	}

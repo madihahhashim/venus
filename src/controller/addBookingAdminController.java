@@ -17,16 +17,17 @@ import dao.bookingDAO;
 import model.Booking;
 
 /**
- * Servlet implementation class addBookingController
+ * Servlet implementation class addBookingAdminController
  */
-@WebServlet("/addBookingController")
-public class addBookingController extends HttpServlet {
+@WebServlet("/addBookingAdminController")
+public class addBookingAdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private bookingDAO dao;
-	
-	public addBookingController()
-	{
-		super();
+       private bookingDAO dao;
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public addBookingAdminController() {
+    	super();
 		dao = new bookingDAO();
 	}
 	
@@ -64,7 +65,7 @@ public class addBookingController extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} 
-			RequestDispatcher dispatcher = request.getRequestDispatcher("customer-booking.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("admin-booking.jsp");
 			dispatcher.forward(request, response);
 		
 	}

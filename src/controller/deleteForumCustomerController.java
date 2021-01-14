@@ -11,42 +11,43 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-import dao.bookingDAO;
-import model.Booking;
+import dao.forumDAO;
+
 /**
- * Servlet implementation class deleteBookingController
+ * Servlet implementation class deleteForumCustomerController
  */
-@WebServlet("/deleteBookingController")
-public class deleteBookingController extends HttpServlet {
+@WebServlet("/deleteForumCustomerController")
+public class deleteForumCustomerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private bookingDAO dao; 
+       private forumDAO dao;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public deleteBookingController() {
-    	super();
-        dao = new bookingDAO();
+    public deleteForumCustomerController() {
+        super();
+        dao = new forumDAO();
+        // TODO Auto-generated constructor stub
     }
 
-	/**
+    /**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    
         String action = request.getParameter("action");
         if (action.equalsIgnoreCase("delete")){
-        int bookingID= Integer.parseInt(request.getParameter("bookingID"));
-        dao.deleteBooking(bookingID);
+        int forumID= Integer.parseInt(request.getParameter("forumID"));
+        dao.deleteForum(forumID);
         
-        action = "customer-rate.jsp";
+        action = "customer-forum.jsp";
         try {
-			request.setAttribute("booking", bookingDAO.getAllBooking());
+			request.setAttribute("forum", forumDAO.getAllForum());
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         }
-        RequestDispatcher view = request.getRequestDispatcher("customer-booking.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("customer-forum.jsp");
         view.forward(request, response);
     }
 

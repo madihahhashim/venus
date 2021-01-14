@@ -13,22 +13,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import dao.bookingDAO;
 import model.Booking;
 
-
 /**
- * Servlet implementation class updateBookingController
+ * Servlet implementation class updateBookingStaffController
  */
-@WebServlet("/updateBookingController")
-public class updateBookingController extends HttpServlet {
-	
-	private bookingDAO dao;
+@WebServlet("/updateBookingStaffController")
+public class updateBookingStaffController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       private bookingDAO dao;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public updateBookingController() {
+    public updateBookingStaffController() {
     	dao = new bookingDAO();
     }
 
@@ -71,7 +69,7 @@ public class updateBookingController extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("customer-booking.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("staff-update-booking.jsp");
 		dispatcher.forward(request, response);
 	}
 

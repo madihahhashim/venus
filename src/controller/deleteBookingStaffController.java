@@ -10,20 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import dao.bookingDAO;
-import model.Booking;
+
 /**
- * Servlet implementation class deleteBookingController
+ * Servlet implementation class deleteBookingStaffController
  */
-@WebServlet("/deleteBookingController")
-public class deleteBookingController extends HttpServlet {
+@WebServlet("/deleteBookingStaffController")
+public class deleteBookingStaffController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private bookingDAO dao; 
+       private bookingDAO dao;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public deleteBookingController() {
+    public deleteBookingStaffController() {
     	super();
         dao = new bookingDAO();
     }
@@ -46,7 +45,7 @@ public class deleteBookingController extends HttpServlet {
 			e.printStackTrace();
 		}
         }
-        RequestDispatcher view = request.getRequestDispatcher("customer-booking.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("staff-booking.jsp");
         view.forward(request, response);
     }
 
